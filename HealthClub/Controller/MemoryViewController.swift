@@ -17,7 +17,7 @@ class MemoryViewController: UIViewController {
     var cardState: [Bool] = []
     var completePair: Int = 0
     var selectIndex: Int?
-    var canSelect: Bool = true
+    var canSelect: Bool = false
     var timer: Timer?
     
     @IBAction func startGame(_ sender: UIButton) {
@@ -55,6 +55,7 @@ class MemoryViewController: UIViewController {
             self.countdownLabel.text = "\(initialTime)s"
             if initialTime == 0 {
                 timer.invalidate()
+                self.canSelect = true
                 self.cardState = Array(repeating: false, count: self.cardName.count)
                 self.memoryCollectionView.reloadData()
             }
