@@ -10,9 +10,25 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var memoryButton: UIButton!
+    @IBOutlet weak var reactionButton: UIButton!
+    @IBOutlet weak var dijkstraButton: UIButton!
+    
+    @IBAction func playGames(_ sender: UIButton) {
+        switch sender {
+        case memoryButton:
+            let vc = MemoryViewController()
+            navigationController?.pushViewController(vc, animated: true)
+        default: break
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        memoryButton.setRadius(radius: 60)
+        reactionButton.setRadius(radius: 60)
+        dijkstraButton.setRadius(radius: 60)
     }
 
 
